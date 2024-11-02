@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+/* open sans */
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+
+:root{
+  --primary: 26, 72, 112; /* Example RGB color */
+  --background: 255, 255, 255; /* White background */
+  --text: 0, 0, 0; /* Black text */
+  --secondary:107 114 128;
+  --accent: 255, 165, 0; /* Orange accent color */
+  --card :255, 255, 255;
+  --light:255,255,255;
+}
+
+
+.dark{
+  --light:255,255,255;
+  --primary: 244, 206, 20; /* Light blue for primary in dark mode */
+  /* --background: 18, 18, 18; */
+  --background: 17 24 39; 
+  --text: 255, 255, 255; /* White text */
+  --secondary : 209 213 219;
+  --accent: 255, 193, 7; /* Yellow accent color */
+  --card :31 41 55;
+}
+
+
+.scrollbar-style::-webkit-scrollbar {
+  background-color: #ddd; /* Color of the scrollbar track */
+  border-radius: 6px; /* Roundness of the thumb */
+  border: 1.5px solid #f0f0f0;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  width: 15px;
+}
+
+.scrollbar-style::-webkit-scrollbar-thumb {
+  background-color: rgb(244, 206, 20); /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Roundness of the thumb */
+  padding: 0 1px;
+  box-shadow:  0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Add this to your CSS file */
+.modal-backdrop {
+  z-index: 1040; /* lower than modal */
+}
+
+.modal {
+  z-index: 1050; /* higher than overlay */
+}
+
+
+
+.active{
+  background-color: rgb(244, 206, 20);
+  color: black;
+}
+.clock-style {
+	border-width: 4px !important;
+	border-color: rgb(0, 10, 25) !important;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+	background-color: rgba(2, 12, 15, 0.753);
+}
+
+*{
+  font-family: 'Poppins', sans-serif;
+  /* font-family: "Albert Sans", sans-serif; */
+  letter-spacing: .5px;
+}
+
+
+.out-shadow{
+  box-shadow: 2px 2px 6px #bababa,-3px -3px 5px #ffffff;
+}
+
+.shadow-primary{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  .scrollbar::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+  }
+
+}
