@@ -8,7 +8,7 @@ export default function About() {
   const { tentang_sekolah, visi, misi } = data;
   if (isLoading) return <Loading />;
   return (
-    <section className="w-full pt-20 bg-background text-text ">
+    <section className="w-full pt-16 bg-background text-text ">
       {/* about */}
       <div
         className="w-full flex  justify-center relative items-center bg-center bg-no-repeat bg-cover sm:bg-cover bg-fixed h-64 sm:h-screen"

@@ -135,7 +135,7 @@ export default function MobileNavbar({ handleToggle, isDarkMode }) {
                     </li>
                   ))}
                   {!isAuthenticated ? (
-                    <a className="text-lg mt-3" href="/login">
+                    <a className="text-lg mt-5" href="/login">
                       Login
                     </a>
                   ) : (

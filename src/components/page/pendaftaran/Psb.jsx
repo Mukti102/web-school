@@ -16,7 +16,7 @@ export default function Psb() {
   }, [data]);
 
   return (
-    <div className="w-full pt-20 dark:bg-gray-900 bg-white pb-10 text-black">
+    <div className="w-full pt-16 dark:bg-gray-900 bg-white pb-10 text-black">
       {/* Hero section */}
       <div
         className="w-full relative flex items-center px-5 sm:px-10 h-60 sm:h-[70vh] lg:h-screen"
