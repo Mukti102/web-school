@@ -18,7 +18,7 @@ export default function Pendidikan() {
   }, [result]);
   return (
     <>
-      <div className="sm:pb-52 pb-0 mt-20 bg-background">
+      <div className="sm:pb-52 pb-0 mt-16 bg-background">
         <div className="w-full h-64 sm:h-screen overflow-hidden z-40">
           <img
             src="https://ugm.ac.id/wp-content/uploads/2023/06/109A2298.jpg"
