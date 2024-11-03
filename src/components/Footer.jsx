@@ -1,6 +1,8 @@
 import React from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function Footer() {
+  const navigate = useNavigate();
   const hide =
     window.location.pathname.startsWith("/login") ||
     window.location.pathname.startsWith("/register");
@@ -52,12 +54,12 @@ export default function Footer() {
                       className="w-full border-none focus:border-transparent focus:ring-transparent sm:text-sm"
                     />
 
-                    <a
-                      href="/register"
+                    <button
+                      onClick={() => navigate("/register")}
                       className="mt-1 w-full bg-primary px-6 py-3 text-sm font-bold uppercase tracking-wide text-white dark:text-black transition-none hover:bg-teal-600 sm:mt-0 sm:w-auto sm:shrink-0"
                     >
                       Sign Up
-                    </a>
+                    </button>
                   </div>
                 </form>
               </div>
