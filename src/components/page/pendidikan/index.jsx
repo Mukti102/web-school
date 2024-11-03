@@ -30,7 +30,7 @@ export default function Pendidikan() {
           <h1 className="text-white dark:text-black text-2xl sm:text-3xl font-semibold sm:py-4 border-b-[1.5px] border-yellow-300">
             {state ? state?.title : "Pendidikan"}
           </h1>
-          <article className="prose sm:mt-5 mt-2 sm:text-base text-xs font-normal">
+          <article className="prose sm:mt-5 mt-2 text-white dark:text-black sm:text-base text-xs font-normal">
             {parse(`${state?.description}`)}
           </article>
         </div>
