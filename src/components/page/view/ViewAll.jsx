@@ -21,7 +21,9 @@ export default function ViewAll({ name, children, items = [] }) {
           {items?.map((item, index) => (
             <Card name={name} item={item} key={index} />
           ))}
-          <Paginate name={name} />
+          <div className="flex justify-between">
+            <Paginate name={name} />
+          </div>
         </div>
       </section>
     </Detail>
