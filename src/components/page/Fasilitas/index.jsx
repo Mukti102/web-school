@@ -31,7 +31,7 @@ export default function Fasilitas() {
   return (
     <>
       <FadeRight>
-        <section className="w-full gap-7 pt-24 sm:pt-32 bg-background text-text flex-col sm:flex sm:flex-row px-5 sm:px-14">
+        <section className="w-full gap-7 pt-24 sm:pt-32 bg-background text-text flex-col sm:flex sm:flex-row px-3 sm:px-14">
           <div className="flex-1">
             <HeadingH2>{data?.title}</HeadingH2>
             <article className="text-xs leading-5">

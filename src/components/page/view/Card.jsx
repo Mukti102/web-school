@@ -22,7 +22,7 @@ export default function Card({ item, name = "berita" }) {
       {/* text */}
       <div className="flex-1  flex-col justify-between h-full">
         <h3 className="sm:text-[1.3rem] w-[90%] text-[.8rem] leading-4 sm:leading-6  font-medium">
-          {limit(item.title, 100)}
+          {limit(item.title, 90)}
         </h3>
         <div className="sm:text-sm text-[.5rem] flex gap-4  sm:my-2 text-gray-400">
           <span className="capitalize">

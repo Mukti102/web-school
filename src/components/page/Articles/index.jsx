@@ -17,7 +17,7 @@ export default function Articles() {
     <>
       <section className="sm:py-10 py-5 text-text">
         <HeadingH1 all={"/berita"}>Berita Terbaru</HeadingH1>
-        <div className="container px-5 sm:px-14 max-w-7xl p-6 space-y-6 sm:space-y-12">
+        <div className="container px-3 sm:px-14 max-w-7xl p-6 space-y-6 sm:space-y-12">
           <FadeUp>
             <a
               rel="noopener noreferrer"
@@ -29,7 +29,7 @@ export default function Articles() {
                 alt="Website Design System"
                 className="object-cover object-top w-full h-64 sm:h-80 lg:col-span-7 dark:bg-gray-500"
               />
-              <div className="p-6 space-y-2  lg:col-span-5">
+              <div className="sm:p-6 p-3 space-y-2  lg:col-span-5">
                 <h3 className="text-2xl font-semibold sm:text-2xl group-hover:underline text-text group-focus:underline">
                   {firstData?.title}
                 </h3>

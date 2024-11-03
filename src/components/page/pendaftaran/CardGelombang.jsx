@@ -28,7 +28,7 @@ export default function CardGelombang({ item }) {
             Pendaftaran Angkatan {item?.angkatan}
           </h3>
         </div>
-        <div class="mt-2 mb-4 text-[10px] sm:text-sm">
+        <div class="mt-2 mb-4 text-sm sm:text-sm">
           Pendaftaran{" "}
           <span className="font-medium">
             Gelombang ke {item?.gelombang_ke}{" "}
@@ -44,7 +44,7 @@ export default function CardGelombang({ item }) {
                 : "/login"
             }
             type="button"
-            class="text-white bg-green-800 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-[10px] sm:text-xs px-3 py-1.5 me-2 text-center inline-flex items-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+            class="text-white bg-green-800 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm sm:text-xs px-3 py-1.5 me-2 text-center inline-flex items-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
           >
             <svg
               class="me-2 hidden h-3 w-3"
@@ -59,7 +59,7 @@ export default function CardGelombang({ item }) {
           </a>
           <button
             type="button"
-            class="text-green-800 bg-transparent border border-green-800 hover:bg-green-900 hover:text-white focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-[10px] sm:text-xs px-3 py-1.5 text-center dark:hover:bg-green-600 dark:border-green-600 dark:text-green-400 dark:hover:text-white dark:focus:ring-green-800"
+            class="text-green-800 bg-transparent border border-green-800 hover:bg-green-900 hover:text-white focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm sm:text-xs px-3 py-1.5 text-center dark:hover:bg-green-600 dark:border-green-600 dark:text-green-400 dark:hover:text-white dark:focus:ring-green-800"
             data-dismiss-target="#alert-additional-content-3"
             aria-label="Close"
           >
@@ -74,7 +74,7 @@ export default function CardGelombang({ item }) {
 export const Alert = () => {
   return (
     <div
-      class="p-4 mb-4 text-[10px] sm:text-sm border border-red-300 dark:border-red-800 mt-10 text-red-800 rounded-lg bg-red-50 dark:bg-gray-900 dark:text-red-400 "
+      class="p-4 mb-4 text-sm sm:text-sm border border-red-300 dark:border-red-800 mt-10 text-red-800 rounded-lg bg-red-50 dark:bg-gray-900 dark:text-red-400 "
       role="alert"
     >
       <svg

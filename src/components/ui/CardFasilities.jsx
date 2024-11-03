@@ -17,7 +17,7 @@ export default function CardFasilities({ item }) {
             alt=""
           />
         </div>
-        <div className="absolute  scale-0 left-0 right-0   top-0  bottom-0 group-hover:scale-100 flex justify-center transition-all duration-20000 items-center">
+        <div className="absolute  scale-0 left-0 right-0   top-0  bottom-0 sm:group-hover:scale-100 group-hover:scale-90 flex justify-center transition-all duration-20000 items-center">
           <span className="text-white text-center text-xl sm:text-3xl">
             {/* <CiCirclePlus /> */}
             <h1>{item?.title}</h1>

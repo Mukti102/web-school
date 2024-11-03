@@ -6,7 +6,7 @@ import { htmlToText } from "html-to-text";
 export default function Education() {
   const { data, isLoading } = useFetch("pendidikan-page");
   return (
-    <div className="w-full sm:flex flex sm:flex-row flex-col-reverse  justify-between items-center my-10 px-5 sm:px-14">
+    <div className="w-full sm:flex flex sm:flex-row flex-col-reverse  justify-between items-center my-10 px-3 sm:px-14">
       <motion.div
         initial={{ opacity: 0, x: -100 }}
         whileInView={{

@@ -11,7 +11,7 @@ export default function Detail2({ children, data }) {
   });
   const { isModalOpen, selectedImage, openModal, closeModal } = useModalPhoto();
   return (
-    <div className="w-full pt-20 sm:pt-24">
+    <div className="w-full pt-18 sm:pt-24">
       <div
         className="w-full h-[20rem] bg-cover bg-center  sm:h-[27rem] sm:bg-cover bg-fixed"
         style={{
@@ -53,7 +53,7 @@ export default function Detail2({ children, data }) {
         </div>
         {/* article */}
         <div className="w-full mt-5">
-          <article className="leading-7 sm:text-sm text-xs">
+          <article className="leading-7 sm:text-sm  text-sm">
             {parse(`${data?.description}`)}
           </article>
           <div className="mt-5 sm:text-sm text-xs font-medium">

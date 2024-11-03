@@ -49,7 +49,7 @@ function Hero() {
     return <HeroLoading />;
   }
   return (
-    <Slider {...settings} className="mt-20 ">
+    <Slider {...settings} className="mt-14 ">
       {images?.map((item) => (
         <div className="sm:h-screen h-64 shadow-primary  outline-none rounded-0 overflow-hidden">
           <img

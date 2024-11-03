@@ -24,7 +24,12 @@ export default function Videos() {
             </div>
             {/* text */}
             <div className="my-3">
-              <h1 className="font-medium text-xl">{firstData?.title}</h1>
+              <a
+                href={`video/${firstData?.id}`}
+                className="font-medium hover:underline text-xl"
+              >
+                {firstData?.title}
+              </a>
               <p className="text-sm my-1">{firstData?.created_at}</p>
             </div>
           </div>
@@ -42,8 +47,8 @@ export default function Videos() {
 export function Card({ item }) {
   return (
     <a
-      href="/video/1"
-      className="flex gap-3 py-1 sm:py-3 border-b-[1px] border-gray-300 border-opacity-50"
+      href={`video/${item?.id}`}
+      className="flex hover:underline gap-3 py-1 sm:py-3 border-b-[1px] border-gray-300 border-opacity-50"
     >
       {/* Image container with fixed size */}
       <div className="sm:w-1/4 w-1/3 h-20 flex-shrink-0">

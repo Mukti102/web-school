@@ -61,8 +61,8 @@ export default function Login() {
             /> */}
           </a>
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-            <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+            <div className="p-4 space-y-5 md:space-y-6 sm:p-8">
+              <h1 className="text-2xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                 Login
               </h1>
               <form
@@ -73,7 +73,7 @@ export default function Login() {
                 <div>
                   <label
                     for="email"
-                    className="block mb-2  text-xs sm:text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2  text-lg sm:text-lg font-medium text-gray-900 dark:text-white"
                   >
                     Your email
                   </label>
@@ -82,7 +82,7 @@ export default function Login() {
                     type="email"
                     name="email"
                     id="email"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full  p-2 sm:p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 sm:text-base text-sm sm:placeholder:text-base placeholder:text-xs dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full  p-2 sm:p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 sm:text-base text-lg sm:placeholder:text-base placeholder:text-lg dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="name@company.com"
                     required
                   />
@@ -90,7 +90,7 @@ export default function Login() {
                 <div>
                   <label
                     for="password"
-                    className="block mb-2  text-xs sm:text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2  text-lg sm:text-lg font-medium text-gray-900 dark:text-white"
                   >
                     Password
                   </label>
@@ -101,7 +101,7 @@ export default function Login() {
                     name="password"
                     id="password"
                     placeholder="••••••••"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2 sm:p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 sm:text-base text-sm sm:placeholder:tet-base placeholder:text-xs dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2 sm:p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 sm:text-base text-lg sm:placeholder:tet-base placeholder:text-lg dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   />
                 </div>
                 <div className="flex items-center justify-between">
@@ -115,7 +115,7 @@ export default function Login() {
                         required=""
                       />
                     </div>
-                    <div className="ml-3  text-xs sm:text-sm">
+                    <div className="ml-3  text-sm sm:text-sm">
                       <label
                         for="remember"
                         className="text-gray-500 dark:text-gray-300"
@@ -126,18 +126,18 @@ export default function Login() {
                   </div>
                   <a
                     href="#"
-                    className=" text-xs sm:text-sm font-medium text-primary-600 hover:underline dark:text-primary"
+                    className=" text-sm sm:text-sm font-medium text-primary-600 hover:underline dark:text-primary"
                   >
                     Forgot password?
                   </a>
                 </div>
                 <button
                   type="submit"
-                  className="w-full text-white flex justify-center dark:text-black font-bold bg-primary hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300  rounded-lg  text-xs sm:text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                  className="w-full text-white flex justify-center dark:text-black font-bold bg-primary hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300  rounded-lg  text-lg sm:text-lg px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                 >
                   {isLoading ? <SpinLoading /> : "Sing In"}
                 </button>
-                <p className=" text-xs sm:text-sm font-light text-gray-500 dark:text-gray-300">
+                <p className=" text-sm sm:text-sm font-light text-gray-500 dark:text-gray-300">
                   Don’t have an account yet?{" "}
                   <a
                     href="/register"

@@ -40,7 +40,7 @@ export default function SmallBtn({
     <Link
       onClick={request}
       to={type === "link" ? url : null}
-      class={`flex items-center rounded-sm sm:rounded ${bg} px-2 sm:px-4 py-0.5 text-[6px] sm:text-xs font-medium capitalize leading-normal ${color}  transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:bg-opacity-90 focus:bg-primary-accent-300  focus:outline-none focus:ring-0 active:bg-primary-600 motion-reduce:transition-none`}
+      class={`flex items-center rounded-sm sm:rounded ${bg} px-2.5 sm:px-4 py-1 text-xs sm:text-xs font-medium capitalize leading-normal ${color}  transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:bg-opacity-90 focus:bg-primary-accent-300  focus:outline-none focus:ring-0 active:bg-primary-600 motion-reduce:transition-none`}
     >
       {text}
     </Link>

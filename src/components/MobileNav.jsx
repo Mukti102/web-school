@@ -9,8 +9,12 @@ import { FiSearch } from "react-icons/fi";
 import { lists } from "../constant/constanta";
 import Toggle from "./Toggle";
 import { NavLink } from "react-router-dom";
+import AuthStore from "../store/AuthStore";
 
 export default function MobileNavbar({ handleToggle, isDarkMode }) {
+  const { logout } = AuthStore((state) => state);
+  const [isLoading, setIsLoading] = useState(false);
+  const isAuthenticated = localStorage?.getItem("user");
   const [selectHover, setSelectHover] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -20,6 +24,17 @@ export default function MobileNavbar({ handleToggle, isDarkMode }) {
 
   const handleDropdownToggle = (index) => {
     setDropdownOpen(isDropdownOpen === index ? null : index);
+  };
+
+  const handleLogout = async () => {
+    try {
+      setIsLoading(true);
+      const res = await logout();
+      setIsLoading(false);
+    } catch (err) {
+      setIsLoading(false);
+      console.log(err);
+    }
   };
 
   const sosial_media = [
@@ -33,7 +48,7 @@ export default function MobileNavbar({ handleToggle, isDarkMode }) {
   return (
     <div className="fixed sm:hidden z-[10000] border-b border-theory border-1 bg-primary dark:bg-gray-900 py-0 text-light top-0 right-0 left-0">
       <div
-        className={`navbar flex items-center justify-between px-5 shadow-sm h-20 ${
+        className={`navbar flex items-center justify-between px-5 shadow-sm h-16 ${
           isDashboard ? "hidden" : ""
         }`}
       >
@@ -65,9 +80,9 @@ export default function MobileNavbar({ handleToggle, isDarkMode }) {
                     ✕
                   </button>
                 </div>
-                <ul className="space-y-1.5">
+                <ul className="space-y-3">
                   {lists.map((item, index) => (
-                    <li key={index} className="block text-sm font-[300]">
+                    <li key={index} className="block text-lg font-[300]">
                       {item?.subLink ? (
                         <>
                           <div
@@ -79,7 +94,7 @@ export default function MobileNavbar({ handleToggle, isDarkMode }) {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 0.2, delay: 0.2 }}
-                                className="text-sm   font-[400]"
+                                className="text-lg   font-[400]"
                               >
                                 {item.name}
                               </motion.span>
@@ -98,7 +113,7 @@ export default function MobileNavbar({ handleToggle, isDarkMode }) {
                                     href={`${subItem.link}`}
                                     className={`w-full py-1 mt-1 items-center hover:text-white  px-2 text-gray-400  rounded-lg flex gap-2`}
                                   >
-                                    <span className="text-xs font-[300]">
+                                    <span className="text-sm font-[300]">
                                       {subItem.name}
                                     </span>
                                   </a>
@@ -119,6 +134,13 @@ export default function MobileNavbar({ handleToggle, isDarkMode }) {
                       {/* Render subLinks if they exist */}
                     </li>
                   ))}
+                  {!isAuthenticated ? (
+                    <a href="/login">Login</a>
+                  ) : (
+                    <button onClick={handleLogout}>
+                      {isLoading ? "Logout..." : "Logout"}
+                    </button>
+                  )}
                 </ul>
               </div>
               <div className="mt-5 flex gap-4">

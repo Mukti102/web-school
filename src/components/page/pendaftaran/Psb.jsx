@@ -32,7 +32,7 @@ export default function Psb() {
           <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold">
             Penerimaan Siswa Baru
           </h1>
-          <p className="mt-1 sm:mt-5 dark:text-secondary text-gray-200 text-xs sm:text-base lg:text-lg">
+          <p className="mt-1 sm:mt-5 dark:text-secondary text-gray-200 text-sm sm:text-base lg:text-lg">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, et?
             Necessitatibus dolore pariatur aperiam harum.
           </p>
@@ -43,7 +43,7 @@ export default function Psb() {
       </div>
 
       {/* Pendaftaran Card Section */}
-      <div className="w-[90%] sm:w-[80%] rounded-md sm:relative static -top-10 sm:-top-20 mx-auto sm:pb-12 dark:bg-gray-800 bg-gray-50 p-5 sm:p-7 shadow-md dark:shadow-black">
+      <div className="w-[91%] sm:w-[80%] rounded-md sm:relative static -top-10 sm:-top-20 mx-auto sm:pb-12 dark:bg-gray-800 bg-gray-50 p-3 sm:p-7 shadow-md dark:shadow-black">
         <h5 className="mb-2 text-lg sm:text-2xl font-semibold sm:font-bold tracking-tight text-gray-900 dark:text-white">
           Penerimaan Siswa Baru Tahun Akademik {pendaftarans?.[0]?.angkatan}
         </h5>
@@ -74,7 +74,7 @@ export function CardStep({ data }) {
       <h2 className="font-semibold text-[0.9rem] sm:text-[1rem]">
         {data?.title}
       </h2>
-      <p className="mt-2 sm:mt-4 text-xs sm:text-sm">{data?.description}</p>
+      <p className="mt-2 sm:mt-4 text-sm sm:text-sm">{data?.description}</p>
     </div>
   );
 }

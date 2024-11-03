@@ -54,7 +54,7 @@ export default function ProfileSchool() {
     <div className="overflow-hidden  px-5 shadow-primary bg-white py-5   w-full">
       <h1 className="text-2xl font-bold">Profile Sekolah</h1>
       <form action="" className="mt-10" onSubmit={formik?.handleSubmit}>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <TextField
             name={"name"}
             handleChange={formik?.handleChange}

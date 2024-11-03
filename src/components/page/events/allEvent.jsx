@@ -24,11 +24,11 @@ export default function AllEvent() {
     return <Loading />;
   }
   return (
-    <div className="pt-20 px-5 dark:bg-background">
-      <h1 className="sm:font-bold  text-white py-5 text-xl sm:text-3xl">
+    <div className="sm:pt-20 pt-14 px-3 sm:px-5 mt-5 dark:bg-background">
+      <h1 className="sm:font-bold  text-white py-1  sm:py-3 text-xl sm:text-3xl">
         Semua Agenda
       </h1>
-      <div className="gap-4 px-0 sm:px-10 bg-background grid grid-cols-3   w-full sm:mt-5">
+      <div className="gap-4 px-0 sm:mt-3 mt-1 bg-background grid grid-cols-3   w-full ">
         {events.map((item, index) => (
           <CardEvent item={item} key={index} />
         ))}

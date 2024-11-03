@@ -4,7 +4,7 @@ import { service } from "../data/service";
 
 export default function Service() {
   return (
-    <section className="sm:mt-24 mt-5 px-5 sm:px-14">
+    <section className="sm:mt-24 mt-5 px-3 sm:px-14">
       <span className="font-bold text-xl sm:text-2xl">
         <h1>Layanan Unggulan</h1>
       </span>

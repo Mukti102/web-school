@@ -14,8 +14,8 @@ export default function Detail({ children }) {
     <Suspense fallback={<Loading />}>
       <div
         className={`${
-          !mt ? "sm:pt-32 pt-28" : null
-        } h-max sm:flex text-text bg-background w-full px-5 gap-10 sm:px-10`}
+          !mt ? "sm:pt-32 pt-20" : null
+        } h-max sm:flex text-text bg-background w-full px-3 gap-10 sm:px-10`}
       >
         <article className="sm:w-[70%] w-full">{children}</article>
         <div className="sm:w-[30%] w-full">

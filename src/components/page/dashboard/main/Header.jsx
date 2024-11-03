@@ -74,7 +74,7 @@ export default function Header({ setOpen, open }) {
 
         {/* Dropdown menu */}
         {dropdownOpen && (
-          <ul className="absolute right-12 -top-5 sm:top-0 sm:z-[1000] mt-2 w-32 bg-white border text-xs border-gray-200 rounded-md shadow-lg ">
+          <ul className="absolute right-12 -top-5 sm:top-0 sm:z-[1000] mt-2 w-32 bg-white border text-sm border-gray-200 rounded-md shadow-lg ">
             <li className="px-4 py-2  sm:text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">
               <Link to={"/dashboard/profile"}>Profile</Link>
             </li>

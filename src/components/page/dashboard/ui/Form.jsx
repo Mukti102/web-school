@@ -92,9 +92,7 @@ export function FormAdd({
         enctype="multipart/form-data"
         className="w-full mt-7 "
       >
-        <div className="grid md:grid-cols-2 grid-cols-1cod gap-6">
-          {children}
-        </div>
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-6">{children}</div>
         {isDescription && (
           <div className="mt-8">
             <TextField
