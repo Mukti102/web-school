@@ -13,7 +13,7 @@ export default function LatestEvents() {
         <CardEvent item={item} key={index} />
       ))}
       <div className="flex justify-between pl-16">
-        <Button>Semua genda</Button>
+        <Button link="/agenda">Semua Agenda</Button>
       </div>
     </div>
   );
