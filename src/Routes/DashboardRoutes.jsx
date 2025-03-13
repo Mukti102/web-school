@@ -56,12 +56,14 @@ import { Navigate } from "react-router-dom";
 import AppStore from "../store/AppStore";
 import EditPendaftaran from "../components/page/dashboard/pendaftaran/EditPendaftaran";
 
-const ProtectedRoute = ({ children }) => {
+const ProtectedRoute = () => {
   const { isAdmin } = AppStore((state) => state);
-  if (isAdmin) {
-    return <Navigate to="/dashboard" />;
+
+  if (!isAdmin) {
+    return <Navigate to="/dashboard" />; // Jika bukan admin, redirect ke dashboard utama
   }
-  return <Outlet />;
+
+  return <Outlet />; // Jika admin, bisa mengakses halaman dalam ProtectedRoute
 };
 
 export default [
