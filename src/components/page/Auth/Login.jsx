@@ -124,12 +124,6 @@ export default function Login() {
                       </label>
                     </div>
                   </div>
-                  <a
-                    href="#"
-                    className=" text-sm sm:text-sm font-medium text-primary-600 hover:underline dark:text-primary"
-                  >
-                    Forgot password?
-                  </a>
                 </div>
                 <button
                   type="submit"
