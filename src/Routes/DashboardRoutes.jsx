@@ -58,7 +58,7 @@ import EditPendaftaran from "../components/page/dashboard/pendaftaran/EditPendaf
 
 const ProtectedRoute = ({ children }) => {
   const { isAdmin } = AppStore((state) => state);
-  if (!isAdmin) {
+  if (isAdmin) {
     return <Navigate to="/dashboard" />;
   }
   return <Outlet />;
