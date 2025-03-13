@@ -5,13 +5,13 @@ import { BASE_URL } from '../api/api';
 import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 const RoleDefault = localStorage?.getItem('user') ? JSON.parse(localStorage?.getItem('user')) : null 
-
+console.log('store',RoleDefault);
 const AppStore = create((set) => ({
   categories : [],
   dataSekolah: null,
   linkPaginates:[],
   authUser:null,
-  isAdmin: RoleDefault?.role_id === 1 ,
+  isAdmin: RoleDefault?.role_id == 1 ,
   currentThumbnail : null,
   temporyData:[],
   isAuthenticated:false,

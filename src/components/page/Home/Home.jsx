@@ -43,7 +43,7 @@ export default function Home() {
         <Galeries />
         <Event />
         <Alumnis />
-        <Banner />
+        {/* <Banner /> */}
       </div>
     </div>
   );
