@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RiInstagramFill } from "react-icons/ri";
 import { FaYoutube } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
@@ -8,7 +8,7 @@ import { FiSearch } from "react-icons/fi";
 import logo from "../assets/logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 import Toggle from "./Toggle";
-import { lists } from "../constant/constanta";
+import { getMenuList, lists } from "../constant/constanta";
 import useFetch from "../hooks/useFetch";
 import { Link, NavLink } from "react-router-dom";
 import MobileNavbar from "./MobileNav";
@@ -53,6 +53,7 @@ export default function Navbar({ handleToggle, isDarkMode }) {
       link: linkedind,
     },
   ];
+  const [menuList, setMenuList] = useState(lists);
   const handleLogout = async () => {
     try {
       setIsLoading(true);
@@ -63,6 +64,15 @@ export default function Navbar({ handleToggle, isDarkMode }) {
       console.log(err);
     }
   };
+
+  useEffect(() => {
+    const fetchMenu = async () => {
+      const menuData = await getMenuList();
+      setMenuList(menuData);
+    };
+    fetchMenu();
+  }, []);
+
   return (
     <>
       <div className="fixed sm:block hidden z-[10000] border-b border-theory  border-1  bg-primary dark:bg-gray-900 py-0 text-light top-0 right-0 left-0">
@@ -100,11 +110,11 @@ export default function Navbar({ handleToggle, isDarkMode }) {
             {/* list 1 */}
             <div className="mt-2">
               <ul className="flex  gap-5 font-light">
-                {lists.map((item, index) => {
+                {menuList?.map((item, index) => {
                   return (
-                    <a
+                    <NavLink
                       key={index}
-                      href={item.link}
+                      to={item?.link}
                       onMouseEnter={(e) => setSelectHover(e.target.innerText)}
                       onMouseLeave={() => setSelectHover(null)}
                       className="after:content-['']  group relative after:block after:h-[1.8px] after:bg-primary after:scale-0 hover:after:scale-100 after:transition-all  after:ease-in-out after:duration-300"
@@ -134,7 +144,7 @@ export default function Navbar({ handleToggle, isDarkMode }) {
                             }}
                             className="absolute shadow-primary dark:border-[1px] dark:border-gray-700 w-max overf mt-5 p-5 pr-20 opacity-0 group-hover:opacity-100 group-hover:delay-300 group-hover:duration-300 transition-opacity visibility-hidden group-hover:visibility-visible bg-background text-text h-max"
                           >
-                            {item.subLink?.map((item, index) => (
+                            {item?.subLink?.map((item, index) => (
                               <a href={item.link} key={index}>
                                 <motion.li
                                   initial={{
@@ -152,11 +162,11 @@ export default function Navbar({ handleToggle, isDarkMode }) {
                           </motion.ul>
                         )}
                       </AnimatePresence>
-                    </a>
+                    </NavLink>
                   );
                 })}
                 {!isAuthenticated ? (
-                  <a href="/login">Login</a>
+                  <NavLink to="/login">Login</NavLink>
                 ) : (
                   <button onClick={handleLogout}>
                     {isLoading ? "Logout..." : "Logout"}

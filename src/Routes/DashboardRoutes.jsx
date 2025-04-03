@@ -58,7 +58,7 @@ import EditPendaftaran from "../components/page/dashboard/pendaftaran/EditPendaf
 
 const ProtectedRoute = () => {
   const { isAdmin } = AppStore((state) => state);
-
+  console.log(isAdmin);
   if (!isAdmin) {
     return <Navigate to="/dashboard" />; // Jika bukan admin, redirect ke dashboard utama
   }

@@ -8,6 +8,7 @@ import AppSetting from "../../../../store/AppSetting";
 import HeroSetting from "./HeroSetting";
 import PendidikanPage from "./PendidikanPage";
 import SocialMedia from "./SocialMedia";
+import Menus from "./Menus";
 
 export default function Setting() {
   const { heroImage, setHeroImage } = AppSetting();
@@ -27,6 +28,11 @@ export default function Setting() {
       icon: MdOutlinePhoneIphone,
       component: "",
     },
+    {
+      name: "Menu",
+      icon: MdOutlinePhoneIphone,
+      component: "",
+    },
   ];
   const [target, setTarget] = React.useState(toolBar[0].name);
   return (
@@ -41,6 +47,7 @@ export default function Setting() {
           {target == "Hero" && <HeroSetting />}
           {target == "Pendidikan" && <PendidikanPage />}
           {target == "Sosial Media" && <SocialMedia />}
+          {target == "Menu" && <Menus />}
         </div>
       </div>
     </>
