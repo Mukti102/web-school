@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { BASE_URL } from "../../../../api/api";
 
-const API_URL = "http://localhost:8000/api/menu"; // Sesuaikan dengan API-mu
+const API_URL = BASE_URL + "menu"; // Sesuaikan dengan API-mu
 
 function Menus() {
   const [data, setData] = useState([]);
