@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { RiInstagramFill } from "react-icons/ri";
 import { FaYoutube } from "react-icons/fa";
@@ -6,7 +6,7 @@ import { FaFacebook } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { FaLinkedin } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
-import { lists } from "../constant/constanta";
+import { getMenuList, lists } from "../constant/constanta";
 import Toggle from "./Toggle";
 import { NavLink } from "react-router-dom";
 import AuthStore from "../store/AuthStore";
@@ -18,6 +18,7 @@ export default function MobileNavbar({ handleToggle, isDarkMode }) {
   const [selectHover, setSelectHover] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [menuList, setMenuList] = useState(lists);
   const isDashboard =
     location.pathname.startsWith("/login") ||
     location.pathname.startsWith("/register");
@@ -25,6 +26,14 @@ export default function MobileNavbar({ handleToggle, isDarkMode }) {
   const handleDropdownToggle = (index) => {
     setDropdownOpen(isDropdownOpen === index ? null : index);
   };
+
+  useEffect(() => {
+    const fetchMenu = async () => {
+      const menuData = await getMenuList();
+      setMenuList(menuData);
+    };
+    fetchMenu();
+  }, []);
 
   const handleLogout = async () => {
     try {
@@ -81,7 +90,7 @@ export default function MobileNavbar({ handleToggle, isDarkMode }) {
                   </button>
                 </div>
                 <ul className="space-y-3">
-                  {lists.map((item, index) => (
+                  {menuList?.map((item, index) => (
                     <li key={index} className="block text-lg font-[300]">
                       {item?.subLink ? (
                         <>
@@ -109,35 +118,35 @@ export default function MobileNavbar({ handleToggle, isDarkMode }) {
                             >
                               {item.subLink.map((subItem, subIndex) => (
                                 <li key={subIndex}>
-                                  <a
+                                  <NavLink
                                     href={`${subItem.link}`}
                                     className={`w-full py-1 mt-1 items-center hover:text-white  px-2 text-gray-400  rounded-lg flex gap-2`}
                                   >
                                     <span className="text-sm font-[300]">
                                       {subItem.name}
                                     </span>
-                                  </a>
+                                  </NavLink>
                                 </li>
                               ))}
                             </motion.ul>
                           )}
                         </>
                       ) : (
-                        <a
+                        <NavLink
                           href={item.link}
                           onClick={() => setIsMobileMenuOpen(false)}
                           className="hover:text-primary"
                         >
                           {item.name}
-                        </a>
+                        </NavLink>
                       )}
                       {/* Render subLinks if they exist */}
                     </li>
                   ))}
                   {!isAuthenticated ? (
-                    <a className="text-lg mt-5" href="/login">
+                    <NavLink className="text-lg mt-5" href="/login">
                       Login
-                    </a>
+                    </NavLink>
                   ) : (
                     <button onClick={handleLogout}>
                       {isLoading ? "Logout..." : "Logout"}
